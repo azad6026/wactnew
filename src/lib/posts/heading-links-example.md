@@ -1,7 +1,7 @@
 ---
 title: How to use clip path in SVG to mask a shape to an image
 date: 2022-10-15T02:01:00.170Z
-coverImage: /images/tips.jpg
+coverImage: /images/jerry-zhang-ePpaQC2c1xA-unsplash.jpg
 excerpt: Check out how to mask an image with a custom shape
 coverWidth: 16
 updated: 2021-11-01
