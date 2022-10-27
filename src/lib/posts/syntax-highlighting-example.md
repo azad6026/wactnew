@@ -1,65 +1,63 @@
 ---
-title: "Syntax highlighting with mdsvex"
-date: "2021-12-01"
-updated: "2021-12-01"
-categories: 
-  - "sveltekit"
-  - "web"
-  - "css"
-  - "markdown"
-coverImage: "/images/linus-nylund-Q5QspluNZmM-unsplash.jpg"
-coverWidth: 16
-coverHeight: 9
-excerpt: This post shows you how syntax highlighting works here.
+layout: posts
+title: Using currentColor keyword in CSS with inputs, SVGs and CSS custom proeprties
+date: 2022-10-25T19:45:38.972Z
+coverImage: /images/jerry-zhang-ePpaQC2c1xA-unsplash.jpg
+excerpt: We will learn about currentColor keyword
 ---
+Y﻿ou might have seen the `currentColor` keyword in SVG files as `fill="currentColor" ` :`path element.`
 
-mdsvex has automatic, built-in syntax highlighting with [Prism.js](https://prismjs.com/); just include the language name after the triple backticks, like so:
+```html
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <g color="yellow">
+    <rect width="50" height="50" fill="currentcolor" />
+  </g>
+</svg>
 
 ```
-\```css
-/* Your CSS here */
-\```
+
+The currentcolor keyword represents the value of an element's color property.  so in the SVG example, if you change the `color` , the `path` element will also uses the same color for `fill` attribute.
+
+B﻿ased on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) If `currentcolor` is used as the value of the `color` property, it instead takes its value from the inherited value of the `color` property.
+
+T﻿his means we can use CSS custom properties for color and accordingly `currentColor `will take the changed value. 
+
+I﻿t can work for other HTML elements as well. Most importantly the input elements:
+
+```html
+<input type="text" name="name" id="name" />
 ```
 
-And that will render just like so:
+S﻿o we can use `currentColor` for input element properties:
 
 ```css
-.my-css-class { 
-	color: #ffd100;
-	box-sizing: border-box;
-	/* etc... */
+input{
+  color: brown;
+  border: 1px solid currentColor;
+}
+input:focus{
+  box-shadow: 0 0 2px currentColor;
 }
 ```
 
-Here's how you'd do JavaScript:
+T﻿he input will have a border of brown color and on focus , it will get a box-shadow of brown as well. 
 
-```
-\```js
-// You can use js or javascript for the language
-\```
-```
+T﻿he cool thing is we can define the color property as a custom property and then as it updates, the currentColor will update accordingly:
 
-Highlighted code sample:
-```js
-const invertNumberInRange = (num, range) => {
-	return range - num;
+```css
+:root{
+  --inputColor: brown;
 }
-
-invertNumberInRange(25, 100); // 75
+input{
+  color: var(--inputColor);
+  border: 1px solid currentColor;
+}
+input:focus{
+  --inputColor : blue;
+  box-shadow: 0 0 2px currentColor;
+}
 ```
 
-Of course, mdsvex supports Svelte highlighting, too:
-
-```svelte
-<script>
-	import myComponent from '$lib/components/myComponent.svelte';
-
-	export let myProp = undefined;
-</script>
-
-<div>
-	<MyComponent prop={myProp}>
-</div>
-```
-
-All these colors are in the `_prism.scss` file inside `src/lib/assets/scss`, if you'd like to change them.
+I﻿n above example, we change the inputColor variable, on focus and  box-shadow property will take the new value (blue) as its currentColor. \
+\
+H﻿ope you enjoyed these tips. Happy coding.
