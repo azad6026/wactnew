@@ -1,27 +1,41 @@
 ---
-title: "A Markdown post with a Svelte component"
-date: "2021-12-01"
-updated: "2021-12-01"
-categories: 
-  - "sveltekit"
-  - "markdown"
-  - "svelte"
-coverImage: "/images/jerry-zhang-ePpaQC2c1xA-unsplash.jpg"
-coverWidth: 16
-coverHeight: 9
-excerpt: This post demonstrates how to include a Svelte component in a Markdown post.
+layout: posts
+title: Centring an element in CSS - with modern width and margin-inline properties
+date: 2022-10-20T07:13:39.802Z
+coverImage: /images/currentcolor-css-keyword.jpg
+excerpt: This is a modern way to centre an element in CSS
 ---
+This is a tip I learnt from [Kevin Powe](https://www.youtube.com/watch?v=SGlpOnIgk1w) which is totally cool.
 
-<script>
-	import Callout from '$lib/components/Callout.svelte';
-</script>
+We all have done this to centre an element using max-width and margin with a padding inside the element:
 
-This starter includes an `Callout.svelte` component. It's not particularly useful on its own, but here's how you might use it inside of a Markdown post, thanks to mdsvex.
+```css
+.element{
+  max-width: 200px;
+  padding: 10px;
+  margin: 0 auto;
+}
+```
 
-<Callout>
-This is an example of the Callout.svelte component! Find it in <code>src/lib/components/Callout.svelte</code>.
-</Callout>
+B﻿ut there is modern way to do this using similar properties but a different approach.
 
-You can inject any Svelte components you want into Markdown! Just import them in a `<script>` tag and then use them wherever you like. 
+Instead of `max-width` and `padding`, we can use the `min` function for the `width` property. The trick is we deduct the padding from the minimum width (100%) , which gives same padding as above to the element. And we give the maximum width as the second parameter of the `min` function:
 
-For that matter, you can inject any HTML anywhere! (Note that you cannot use Markdown _inside_ Svelte components or HTML, however. Any opened tag must be closed before returning to Markdown.)
+```css
+.element{
+  width: min(100% - 10px, 200px);
+}
+```
+
+T﻿he above one liner is equal to the first two lines of the initial code. Now to make the element centred, we will use [margin-inline](https://developer.mozilla.org/en-US/docs/Web/CSS/margin-inline) property.
+
+T﻿his property defines both the logical inline start and end margins of an element and if set to auto, will give the same margin to both sides of the element so it will get centred:
+
+```css
+.element{
+  width: min(100% - 10px, 200px);
+  margin-inline: auto;
+}
+```
+
+T﻿hat is it. Hope it helps.
