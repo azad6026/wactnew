@@ -33,11 +33,7 @@ const config = {
     prerender: {
       entries: [
         '*',
-        '/api/posts/category/*',
         '/api/posts/page/*',
-        '/blog/category/*/page',
-        '/blog/category/*/page/*',
-        '/blog/category/page/*',
         '/blog/page/*',
       ]
     }
