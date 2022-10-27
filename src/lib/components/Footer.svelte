@@ -3,7 +3,7 @@
 	import { siteAuthor } from '$lib/config'
 </script>
 
-<footer>
+<!-- <footer>
 	<MainNav />
 
 	<nav>
@@ -18,4 +18,4 @@
 	</nav>
 
 	<p>&copy;{new Date().getFullYear()} {siteAuthor}</p>
-</footer>
+</footer> -->
