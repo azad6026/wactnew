@@ -2,7 +2,7 @@
 layout: posts
 title: Using currentColor keyword in CSS with inputs, SVGs and CSS custom proeprties
 date: 2022-10-25T19:45:38.972Z
-coverImage: /images/jerry-zhang-ePpaQC2c1xA-unsplash.jpg
+coverImage: /images/currentColor-css-keyword.jpg
 excerpt: We will learn about currentColor keyword
 ---
 Y﻿ou might have seen the `currentColor` keyword in SVG files as `fill="currentColor" ` :`path element.`

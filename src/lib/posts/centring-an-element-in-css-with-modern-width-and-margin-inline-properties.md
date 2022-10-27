@@ -2,7 +2,7 @@
 layout: posts
 title: Centring an element in CSS - with modern width and margin-inline properties
 date: 2022-10-20T07:13:39.802Z
-coverImage: /images/jerry-zhang-ePpaQC2c1xA-unsplash.jpg
+coverImage: /images/notes-down.jpg
 excerpt: This is a modern way to centre an element in CSS
 ---
 This is a tip I learnt from [Kevin Powe](https://www.youtube.com/watch?v=SGlpOnIgk1w) which is totally cool.

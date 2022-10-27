@@ -36,9 +36,9 @@ const { title, excerpt, date, updated, coverImage, coverWidth, coverHeight } = d
 	<h1>{ title }</h1>
 	
 	<div class="meta">
-		<b>Published:</b> {date}
+		<b>Published:</b> {new Date(date).toDateString()}
 		<br>
-		<b>Updated:</b> {updated}
+		<!-- <b>Updated:</b> {updated} -->
 	</div>
 
 	{@html data.PostContent}
