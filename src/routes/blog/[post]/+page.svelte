@@ -23,24 +23,16 @@ const { title, excerpt, date, updated, coverImage, coverWidth, coverHeight } = d
 
 
 <article class="post">
-	<!-- You might want to add an alt frontmatter attribute. If not, leaving alt blank here works, too. -->
+	<h1>{ title }</h1>
 	<img
 		class="cover-image"
 		src="{coverImage}"
-		alt=""
-		style="aspect-ratio: {coverWidth} / {coverHeight};"
+		alt="{ title }"
+		style="aspect-ratio: 16 / 9;"
 		width={coverWidth}
 		height={coverHeight}
 	/>
-
-	<h1>{ title }</h1>
-	
-	<div class="meta">
-		<b>Published:</b> {new Date(date).toDateString()}
-		<br>
-		<!-- <b>Updated:</b> {updated} -->
-	</div>
-
+	<cite>Published:</cite> {new Date(date).toDateString()}
 	{@html data.PostContent}
 
 </article> 
