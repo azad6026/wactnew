@@ -37,6 +37,9 @@ h1 {
     overflow: hidden;
     padding-bottom: 1rem
 }
+main{
+    padding-bottom: 3.8rem;
+}
 main h1{
 
     text-shadow: 2px 2px #ceae00;
@@ -140,7 +143,9 @@ li {
 
 .posts-list {
     list-style-type: none;
-    padding: 0
+    padding: 0;
+    display: grid;
+    grid-gap: 2.4rem;
 }
 
 .posts-list li {
@@ -151,31 +156,41 @@ li {
     margin-top: 1rem
 }
 
-.posts-list a {
+.posts-list .post-card {
     display: grid;
     grid-template-columns:1fr;
+    align-items: center;
+    grid-column-gap: 1.6rem;
+    grid-row-gap: 1rem;
 }
 @media (min-width: 576px){
-    .posts-list a {
+    .posts-list .post-card {
         grid-template-columns: 200px 1fr;
-        align-items: center;
-        grid-gap: 1.6rem;
     }
 }
 .posts-list .post-image{
-    max-height: 200px;
+    /* max-height: 200px; */
 }
 @media (min-width: 576px){
         .posts-list .post-image{
             grid-column: 1;
-            grid-row: 1;
+            grid-row: 1/ span 2;
     }
+}
+.posts-list .post-title,.posts-list .post-excerpt{
+    margin: 0;
 }
 @media (min-width: 576px){
     .posts-list .post-title{
         grid-column: 2;
         grid-row: 1;
+        align-self: flex-end;
     }
+    .posts-list .post-excerpt{
+        grid-column: 2;
+        grid-row: 2;
+        align-self: flex-start;
+    } 
 
 }
 .post-footer ul {
