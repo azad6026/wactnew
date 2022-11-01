@@ -16,10 +16,10 @@
 	</a>
 	
 	<a href="/" class="site-title">
-		{siteTitle}
+		<img src="images/write-and-code-time-logo.png"/>
 	</a>
 	
-	<HamburgerMenuButton />
-	<MainNav />
+	<!-- <HamburgerMenuButton />
+	<MainNav /> -->
 
 </header>
