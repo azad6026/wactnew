@@ -16,7 +16,7 @@
 	</a>
 	
 	<a href="/" class="site-title">
-		<img src="images/write-and-code-time-logo.png"/>
+		<img src="/images/write-and-code-time-logo.png"/>
 	</a>
 	
 	<!-- <HamburgerMenuButton />
