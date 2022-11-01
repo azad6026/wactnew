@@ -10,13 +10,6 @@
 					<h2>
 						{post.title}
 					</h2>
-					<img
-					src={post.coverImage}
-					alt=""
-					width={post.coverWidth}
-					height={post.coverHeight}
-					style="ratio: {post.coverWidth} / {post.coverHeight}"
-					/>
 				</a>
 			</article>
 			<p>{post.excerpt}</p>
