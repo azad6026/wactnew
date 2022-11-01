@@ -152,9 +152,32 @@ li {
 }
 
 .posts-list a {
-    display: block
+    display: grid;
+    grid-template-columns:1fr;
 }
+@media (min-width: 576px){
+    .posts-list a {
+        grid-template-columns: 200px 1fr;
+        align-items: center;
+        grid-gap: 1.6rem;
+    }
+}
+.posts-list .post-image{
+    max-height: 200px;
+}
+@media (min-width: 576px){
+        .posts-list .post-image{
+            grid-column: 1;
+            grid-row: 1;
+    }
+}
+@media (min-width: 576px){
+    .posts-list .post-title{
+        grid-column: 2;
+        grid-row: 1;
+    }
 
+}
 .post-footer ul {
     padding: 0
 }
